@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models\Admin;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Invitation extends Model
+{
+    use HasFactory, SoftDeletes;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'id',
+        'user_id',
+        'email',
+        'role'
+    ];
+}

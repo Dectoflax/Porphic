@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer {
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+        cursor: pointer;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        @apply bg-blue-200
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gradient-to-bl from-blue-600 via-blue-500 to-blue-600 rounded-lg
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        @apply from-blue-300 via-blue-400 to-blue-500 rounded-lg
+    }
+}
