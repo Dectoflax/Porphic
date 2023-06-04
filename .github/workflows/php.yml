@@ -33,4 +33,5 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan migrate
-           php artisan db:seed
+    - name: Seed database
+      run: php artisan db:seed
