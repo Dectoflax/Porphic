@@ -16,10 +16,11 @@ class Media extends Model
     protected $fillable = [
         'id',
         'name',
-        'image',
+        'file',
         'user_id',
         'description',
-        'type'
+        'type',
+        'keywords'
     ];
 
     public function author()
@@ -29,7 +30,9 @@ class Media extends Model
 
     public function url()
     {
-        return Storage::url($this->getAttribute('image'));
+        // todo
+        return \asset('resources/svg/Logo_ring.svg');
+        return Storage::url($this->getAttribute('file'));
     }
 
     public function description()

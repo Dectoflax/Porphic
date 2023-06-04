@@ -28,7 +28,7 @@ class AdminFactory extends Factory
             'remember_token' => Str::random(10),
             'username' => \fake()->userName(),
             'id' => str()->random(KeyLength::ADMIN),
-            'role' => Role::all(['id'])[0] ?? null
+            'role' => Role::all(['id'])->random()
         ];
     }
 }

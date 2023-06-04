@@ -4,6 +4,7 @@ namespace Database\Factories\Blog;
 
 use App\Models\Blog\Comment;
 use App\Models\Blog\CommentReply;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,10 +22,9 @@ class CommentReplyFactory extends Factory
      */
     public function definition(): array
     {
-        $comments = Comment::all(['id']);
         return [
-            'user_id' => 'binkapS',
-            'comment_id' => $comments[\random_int(0, ($comments->count() - 1))],
+            'user_id' => User::all(['id'])->random()->id,
+            'comment_id' => Comment::all(['id'])->random()->id,
             'body' => \fake()->sentence()
         ];
     }

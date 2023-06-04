@@ -42,6 +42,7 @@ class CategoryData extends Component
     {
         if ($this->select) {
             if (!is_null($category = Category::find($this->categoryData['name']))) {
+                $this->handlePreDelete($category);
                 $category->delete();
             }
             $this->show = false;
@@ -52,11 +53,18 @@ class CategoryData extends Component
     {
         if ($categoryId == $this->categoryId) {
             if (!is_null($category = Category::find($this->categoryData['name']))) {
+                $this->handlePreDelete($category);
                 $category->delete();
             }
             $this->show = false;
             \alert(\flash()->simple('Category deleted successfully', Mode::SUCCESS)->livewire($this));
         }
+    }
+
+    private function handlePreDelete(Category $category)
+    {
+        // todo
+        // Ensure to take case of posts under the category here first
     }
 
     public function select(bool $checked)

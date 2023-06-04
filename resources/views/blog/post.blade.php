@@ -7,7 +7,7 @@
             <div class="lg:w-3/4 lg:px-6 space-y-3">
                 <div itemscope itemtype="http://schema.org/Article">
 
-                    <a href="{{ route('blog.category', ['category' => $post->categoryModel->getAttribute('id')]) }}"
+                    <a href="{{ route('blog.category', ['category' => $post->categoryModel]) }}"
                         class="bg-blue-500 text-white font-bold uppercase text-sm px-10 py-1.5 w-fit">{{
                         $post->categoryModel->getAttribute('name') }}</a>
 
@@ -40,25 +40,26 @@
                     <livewire:blog.comments :post="$post->getAttribute('id')">
 
                 </div>
-
-                {{-- May also like starts here --}}
-
-                <div class="lg:w-1/4 mt-5 lg:mt-0">
-                    <span class="bg-blue-500 text-white font-bold uppercase text-sm px-10 py-1.5 w-fit">You may also
-                        like</span>
-                    <hr class="border border-blue-500 mt-5">
-                    <div class="mt-8 lg:px-3">
-
-                        @foreach ($suggestions as $suggestion)
-                        <div>
-                            <livewire:blog.maylike-preview :post="$suggestion" />
-                        </div>
-                        @endforeach
-
-                    </div>
-                </div>
-
             </div>
+
+            {{-- May also like starts here --}}
+
+            <div class="lg:w-1/4 mt-5 lg:mt-0">
+                <span class="bg-blue-500 text-white font-bold uppercase text-sm px-10 py-1.5 w-fit">You may also
+                    like</span>
+                <hr class="border border-blue-500 mt-5">
+                <div class="mt-8 lg:px-3">
+
+                    @foreach ($suggestions as $suggestion)
+                    <div>
+                        <livewire:blog.maylike-preview :post="$suggestion" />
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+
         </div>
+    </div>
 </section>
 @endsection

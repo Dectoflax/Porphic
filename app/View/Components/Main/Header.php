@@ -16,7 +16,7 @@ class Header extends Component
      */
     public function __construct()
     {
-        $this->categories = Category::all(['id', 'name']);
+        $this->categories = Category::all(['name']);
     }
 
     /**

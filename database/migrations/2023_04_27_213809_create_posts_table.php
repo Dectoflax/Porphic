@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('user_id');
-            $table->string('topic')->unique();
+            $table->string('topic');
             $table->string('media')->nullable();
             $table->string('category');
             $table->integer('views')->default(0);

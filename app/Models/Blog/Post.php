@@ -14,6 +14,8 @@ class Post extends Model
 
     protected $keyType = 'string';
 
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'id',
         'user_id',
@@ -28,14 +30,12 @@ class Post extends Model
 
     public function categoryModel()
     {
-        return $this->belongsTo(Category::class, 'category', 'id');
+        return $this->belongsTo(Category::class, 'category', 'name');
     }
 
     public function thumbnail()
     {
-        \dd('Set type to continue');
-        // todo
-        return $this->hasOne(Media::class, 'id', 'media')->where();
+        return $this->hasOne(Media::class, 'id', 'media')->where('type', 'thumb');
     }
 
     public function media()

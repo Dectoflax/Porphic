@@ -89,7 +89,7 @@ class Admin extends Model implements Authenticatable, CanResetPassword
 
     public function getRole()
     {
-        return "Writer";
+        return $this->getAttribute('role');
     }
 
     /**

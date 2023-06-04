@@ -11,6 +11,6 @@ class CategoryController extends Controller
 {
     public function index(CategoryService $categoryService, Category $category)
     {
-        return \view('blog.category', ['category' => $category], $categoryService->fetch($category->getAttribute('id')));
+        return \view('blog.category', ['category' => $category], $categoryService->fetch($category->getAttribute('name')));
     }
 }

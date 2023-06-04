@@ -4,7 +4,7 @@ namespace App\Binkap\Porph;
 
 class Version
 {
-    const NUMBER = 0.01;
+    const NUMBER = "1.0.0";
 
-    const NAME = "Starter";
+    const NAME = "Moonlight";
 }

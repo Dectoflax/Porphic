@@ -17,4 +17,6 @@ readonly class KeyLength
     const ROLE = 10;
 
     const ADMIN = 20;
+
+    const MEDIA = 40;
 }

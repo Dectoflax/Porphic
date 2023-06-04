@@ -3,6 +3,7 @@
 namespace Database\Factories\Blog;
 
 use App\Models\Blog\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,8 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => 'binkapS',
-            'post_id' => Post::all(['id'])[0] ?? 'random',
+            'user_id' => User::all(['id'])->random()->id,
+            'post_id' => Post::all(['id'])->random()->id,
             'body' => \fake()->sentence(10)
         ];
     }

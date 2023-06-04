@@ -2,10 +2,9 @@
 
 namespace Database\Factories\Blog;
 
-use App\Binkap\KeyLength;
+use App\Binkap\Blog\Constants;
 use App\Models\Admin;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Blog\Category>
@@ -20,11 +19,10 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'id' => Str::random(KeyLength::CATEGORY),
             'name' => \fake()->unique()->word(),
-            'user_id' => Admin::all()[0]->id,
+            'user_id' => Admin::all()->first()->id,
             'description' => \fake()->sentence(),
-            'keywords' => \implode(',', \fake()->words(6))
+            'keywords' => \implode(Constants::KEYWORD_SEPARATOR->value, \fake()->words(6))
         ];
     }
 }

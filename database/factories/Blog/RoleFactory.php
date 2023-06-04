@@ -20,7 +20,7 @@ class RoleFactory extends Factory
     {
         return [
             'id' => Str::random(KeyLength::ROLE),
-            'name' => \fake()->word(),
+            'name' => \fake()->unique()->word(),
             'permissions' => null
         ];
     }

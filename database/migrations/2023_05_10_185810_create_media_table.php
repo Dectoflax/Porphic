@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->string('user_id');
             $table->string('description');
             $table->string('keywords');
