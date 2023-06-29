@@ -11,6 +11,7 @@ use App\Models\Admin;
 use App\Models\Blog\Category;
 use App\Models\Blog\Comment;
 use App\Models\Blog\CommentReply;
+use App\Models\Blog\Draft;
 use App\Models\Blog\Post;
 use App\Models\Newsletter;
 use App\Models\User;
@@ -104,7 +105,7 @@ class StatisticService extends Services
             ['name' => 'admins', 'count' => Admin::count(), 'icon' => 'ri-admin-line'],
             ['name' => 'comments', 'count' => Comment::count(), 'icon' => 'ri-message-3-line'],
             ['name' => 'replies', 'count' => CommentReply::count(), 'icon' => 'ri-reply-all-line'],
-            ['name' => 'drafts', 'count' => 0, 'icon' => 'ri-draft-line']
+            ['name' => 'drafts', 'count' => Draft::count(), 'icon' => 'ri-draft-line']
         ];
         $new = [];
         foreach ($array as $value) {

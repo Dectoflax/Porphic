@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Binkap\Storage;
 use App\Models\Blog\Category;
+use App\Models\Blog\Draft;
 use App\Models\Blog\Post;
 use App\Models\Blog\Role;
 use App\Notifications\Admin\Auth\Password\ResetNotification;
@@ -84,7 +85,7 @@ class Admin extends Model implements Authenticatable, CanResetPassword
 
     public function drafts()
     {
-        return;
+        return $this->hasMany(Draft::class, 'user_id', 'id');
     }
 
     public function getRole()

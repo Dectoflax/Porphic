@@ -93,12 +93,13 @@ class AdminData extends Component
             $return = false;
         }
         if (($count = $admin->posts()->count()) > 0) {
-            $this->ownerships .= "{$count} " . Str::plural('category', $count);
+            $this->ownerships .= "{$count} " . Str::plural('post', $count);
             $return = false;
         }
-        // if ($admin->drafts()->count() > 0) {
-        //     # code...
-        // }
+        if (($count = $admin->drafts()->count()) > 0) {
+            $this->ownerships .= "{$count} " . Str::plural('draft', $count);
+            $return = false;
+        }
         return $return;
     }
 

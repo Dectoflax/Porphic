@@ -3,21 +3,22 @@
 namespace App\Http\Services\Admin;
 
 use App\Http\Services;
-use App\Models\Admin;
+use Illuminate\Http\Request;
 
 class AdministrationService extends Services
 {
+    private Request $request;
 
     public function fetch(): array
     {
+        $this->request = \func_get_arg(0);
         return [
-            'admins' => $this->admins(),
-            'count' => Admin::count()
+            'active' => $this->info()
         ];
     }
 
-    private function admins()
+    private function info()
     {
-        return Admin::paginate(10);
+        return \array_key_exists('admins', $this->request->query());
     }
 }

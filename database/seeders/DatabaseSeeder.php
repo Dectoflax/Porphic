@@ -9,6 +9,7 @@ use App\Models\Admin;
 use App\Models\Blog\Category;
 use App\Models\Blog\Comment;
 use App\Models\Blog\CommentReply;
+use App\Models\Blog\Draft;
 use App\Models\Blog\Information;
 use App\Models\Blog\Post;
 use App\Models\Blog\Role;
@@ -30,9 +31,22 @@ class DatabaseSeeder extends Seeder
         Category::factory()->times(5)->create();
         Information::factory()->create();
         Post::factory()->times(10)->create();
+        Draft::factory()->times(10)->create();
         Comment::factory()->times(5)->create();
         CommentReply::factory()->times(10)->create();
         Post::all()->each(function (Post $post) {
+            Media::create([
+                'id' => $id = Str::random(KeyLength::MEDIA),
+                'name' => \fake()->word(),
+                'file' => \fake()->imageUrl(),
+                'user_id' => Admin::all()->random()->id,
+                'description' => \fake()->sentence(),
+                'keywords' => implode(',', \fake()->sentences()),
+                'type' => 'thumb'
+            ]);
+            $post->update(['media' => $id]);
+        });
+        Draft::all()->each(function (Draft $post) {
             Media::create([
                 'id' => $id = Str::random(KeyLength::MEDIA),
                 'name' => \fake()->word(),

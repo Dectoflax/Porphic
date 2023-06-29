@@ -4,12 +4,9 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class UserShell extends Component
 {
-    // use WithPagination;
-
     public int $count;
 
     public function mount()
