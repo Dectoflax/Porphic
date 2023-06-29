@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class UserShell extends Component
 {
-    use WithPagination;
+    // use WithPagination;
 
     public int $count;
 
@@ -19,6 +19,6 @@ class UserShell extends Component
 
     public function render()
     {
-        return view('livewire.admin.user-shell', ['users' => User::paginate(5)]);
+        return view('livewire.admin.user-shell', ['users' => User::paginate(5, pageName: 'users')]);
     }
 }

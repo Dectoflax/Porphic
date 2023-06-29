@@ -2,11 +2,10 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Admin;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class AdminShell extends Component
+class DraftShell extends Component
 {
     // use WithPagination;
 
@@ -14,11 +13,11 @@ class AdminShell extends Component
 
     public function mount()
     {
-        $this->count = Admin::count();
+        $this->count = 20;
     }
 
     public function render()
     {
-        return view('livewire.admin.admin-shell', ['admins' => Admin::whereNot('id', \auth()->id())->paginate(5)]);
+        return view('livewire.admin.draft-shell');
     }
 }

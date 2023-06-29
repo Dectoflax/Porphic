@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class CategoryShell extends Component
 {
-    use WithPagination;
+    // use WithPagination;
 
     public int $count;
 

@@ -1,7 +1,7 @@
 <form method="post" wire:submit.prevent='login'>
     <div class="w-full mt-4">
         <input wire:model.defer='email'
-            class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+            class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
             type="email" placeholder="Email Address" aria-label="Email Address" />
     </div>
     <x-auth.error :key="'email'" />
@@ -11,7 +11,7 @@
             <a href="{{ route('admin.password.forgot') }}">Forgot password?</a>
         </div>
         <input wire:model.defer='password'
-            class="block w-full px-4 py-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+            class="block w-full px-4 py-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
             type="password" placeholder="Password" aria-label="Password" />
     </div>
     <x-auth.error :key="'password'" />
@@ -19,7 +19,7 @@
     <div class="flex items-center justify-between mt-4">
         <div class="flex justify-center items-center space-x-1">
             <input
-                class="border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
+                class="border rounded-lg focus:border-blue-400 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                 wire:model.defer='remember' type="checkbox">
             <label class="text-sm text-gray-500" for="remember">Remember me</label>
         </div>

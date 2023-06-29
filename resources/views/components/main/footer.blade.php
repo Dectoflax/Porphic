@@ -1,35 +1,31 @@
 <livewire:blog.newsletter />
-<footer class="bg-white dark:bg-gray-900 border-t">
+<footer class="bg-white border-t">
     <div class="container px-6 py-8 mx-auto">
         <div class="flex flex-col items-center text-center">
             <livewire:admin.secret.login />
 
             <div class="flex flex-wrap justify-center mt-6 -mx-4">
 
-                <a href="#"
-                    class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500">
                     About </a>
 
-                <a href="#"
-                    class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500">
                     Privacy </a>
 
-                <a href="#"
-                    class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400">
+                <a href="#" class="mx-4 text-sm text-gray-600 transition-colors duration-300 hover:text-blue-500">
                     Cookies </a>
             </div>
 
         </div>
 
-        <hr class="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
+        <hr class="my-6 border-gray-200 md:my-10" />
 
         <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-            <p class="text-sm text-gray-500 dark:text-gray-300">© {{ config('app.name') }} {{ date('Y') }}. All Rights
+            <p class="text-sm text-gray-500">© {{ config('app.name') }} {{ date('Y') }}. All Rights
                 Reserved.</p>
 
             <div class="flex -mx-2">
-                <a href="#"
-                    class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -38,8 +34,7 @@
                     </svg>
                 </a>
 
-                <a href="#"
-                    class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500"
                     aria-label="Facebook">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -49,8 +44,7 @@
                     </svg>
                 </a>
 
-                <a href="#"
-                    class="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                <a href="#" class="mx-2 text-gray-600 transition-colors duration-300 hover:text-blue-500"
                     aria-label="Github">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">

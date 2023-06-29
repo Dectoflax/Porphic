@@ -1,28 +1,27 @@
 <tr x-data="{ show: @entangle('show') }" x-show='show'>
     <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
         <div class="inline-flex items-center gap-x-3">
-            <input wire:model='select' type="checkbox"
-                class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700">
+            <input wire:model='select' type="checkbox" class="text-blue-500 border-gray-300 rounded   ">
 
             <div class="flex items-center gap-x-2">
-                <h2 class="font-medium text-gray-800 dark:text-white capitalize">{{ $categoryData['name'] }}</h2>
+                <h2 class="font-medium text-gray-800  capitalize">{{ $categoryData['name'] }}</h2>
             </div>
     </td>
     <td class="py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-        <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+        <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 ">
 
             <h2 class="text-sm font-normal text-emerald-500">
                 <span>{{ '@' }}{{ $categoryData['owner']['username'] }}</span>
             </h2>
         </div>
     </td>
-    <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
+    <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
         {{ $categoryData['description'] }}
     </td>
     <td class="px-4 py-4 text-sm whitespace-nowrap">
         <div class="flex items-center gap-x-2 overflow-auto">
             @foreach ($keywords as $keyword)
-            <p class="px-3 py-1 text-xs text-indigo-500 rounded-full dark:bg-gray-800 bg-indigo-100/60">
+            <p class="px-3 py-1 text-xs text-indigo-500 rounded-full  bg-indigo-100/60">
                 {{ $keyword }}
             </p>
             @endforeach
@@ -31,8 +30,7 @@
     <td class="px-4 py-4 text-sm whitespace-nowrap">
         <div class="flex items-center gap-x-6">
 
-            <button
-                class="text-gray-500 transition-colors duration-200 dark:hover:text-yellow-500 dark:text-gray-300 hover:text-yellow-500 focus:outline-none">
+            <button class="text-gray-500 transition-colors duration-200  hover:text-yellow-500 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -42,7 +40,7 @@
 
             <button
                 wire:click="$emit('alert.confirmation', '{`message`: `Please confirm category delete`, `event`: `category.delete`, `params`: `{{ $categoryId }}`}')"
-                class="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none">
+                class="text-gray-500 transition-colors duration-200  hover:text-red-500 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round"

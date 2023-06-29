@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('content')
-<section class="bg-gray-50 dark:bg-gray-900">
+<section class="bg-gray-50">
     <div class="container px-6 py-10 mx-auto">
         <div class="lg:flex lg:-mx-6">
             <div class="lg:w-3/4 lg:px-6 space-y-3">
@@ -13,7 +13,7 @@
 
                     <div class="flex justify-center items-center text-center mt-5">
                         <h1 itemprop="headline"
-                            class="max-w-lg mb-4 text-2xl font-semibold leading-tight text-gray-800 dark:text-white">
+                            class="max-w-lg mb-4 text-2xl font-semibold leading-tight text-gray-800 ">
                             {{ $post->getAttribute('topic') }}
                         </h1>
                     </div>
@@ -23,10 +23,10 @@
                             src="{{ $post->author->avatar() }}" alt="{{ $post->author->getAttribute('name') }}">
 
                         <div class="mx-4">
-                            <span class="text-sm text-gray-700 dark:text-gray-200">{{
+                            <span class="text-sm text-gray-700 ">{{
                                 $post->author->getAttribute('name') }}
                             </span>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $post->author->getRole() }}</p>
+                            <p class="text-sm text-gray-500 ">{{ $post->author->getRole() }}</p>
                         </div>
                     </div>
 

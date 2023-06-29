@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 
 @section('content')
-<section class="bg-gray-50 dark:bg-gray-900">
+<section class="bg-gray-50 ">
     <div class="container px-6 py-10 mx-auto">
         <div class="lg:flex lg:-mx-6">
 

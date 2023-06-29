@@ -1,9 +1,9 @@
 <div x-data="{ checked: false }">
     <div class="sm:flex sm:items-center sm:justify-between">
         <div class="flex items-center gap-x-3">
-            <h2 class="text-lg font-medium text-gray-800 dark:text-white">Users</h2>
+            <h2 class="text-lg font-medium text-gray-800 ">Users</h2>
 
-            <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">
+            <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full  ">
                 {{ $count }} {{ Str::plural('user', $count) }}
             </span>
         </div>
@@ -12,7 +12,7 @@
             <button
                 wire:click="$emit('alert.confirmation', '{`event`: `user.selected.delete`, `message`: `Are sure you want to delete all selected users`}')"
                 @click='checked = false'
-                class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-red-500 rounded-lg sm:w-auto gap-x-2 hover:bg-red-600 dark:hover:bg-red-500 dark:bg-red-600">
+                class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-red-500 rounded-lg sm:w-auto gap-x-2 hover:bg-red-600">
                 <i class="ri-delete-bin-6-line text-md lg:text-lg"></i>
                 <span>Delete</span>
             </button>
@@ -22,14 +22,14 @@
     <div class="flex flex-col mt-6">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                <div class="overflow-hidden border border-gray-200  md:rounded-lg">
 
 
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-800">
+                    <table class="min-w-full divide-y divide-gray-200 ">
+                        <thead class="bg-gray-50 ">
                             <tr>
                                 <th scope="col"
-                                    class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                     <div class="flex items-center gap-x-3">
                                         <i x-show='checked' x-on:click='checked = false'
                                             wire:click='$emit("user.all.selected", false)'
@@ -42,7 +42,7 @@
                                 </th>
 
                                 <th scope="col"
-                                    class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                     <button class="flex items-center gap-x-2">
                                         <span>Status</span>
 
@@ -62,7 +62,7 @@
                                 </th>
 
                                 <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                     Email address</th>
 
 
@@ -71,7 +71,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                        <tbody class="bg-white divide-y divide-gray-200  ">
                             @foreach ($users as $user)
                             <livewire:admin.user-data :user="$user" />
                             @endforeach

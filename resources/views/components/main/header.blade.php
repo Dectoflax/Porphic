@@ -40,7 +40,7 @@
                         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
-                        class="absolute flex flex-col space-y-2 right-0 z-20 w-48 py-3 mt-2 origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800">
+                        class="absolute flex flex-col space-y-2 right-0 z-20 w-48 py-3 mt-2 origin-top-right bg-white rounded-md shadow-xl ">
                         @foreach ($categories as $category)
                         <a class="my-2 transform rounded-lg px-3 py-1 text-black transition-colors duration-300 mx-2 hover:border-b hover:border-blue-500 hover:text-blue-600 md:my-0"
                             href="{{ route('blog.category', ['category' => $category]) }}">{{

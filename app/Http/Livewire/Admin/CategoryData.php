@@ -28,7 +28,7 @@ class CategoryData extends Component
     public function mount(Category $category)
     {
         $this->select = false;
-        $this->categoryId = $category->getAttribute('id');
+        $this->categoryId = $category->getAttribute('name');
         $this->keywords = \explode(',', $category->getAttribute('keywords'));
         $this->categoryData = $category->toArray();
     }
