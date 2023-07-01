@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Binkap\Alert\Mode;
 use App\Binkap\Storage;
 use App\Models\Admin;
 use Illuminate\Support\Str;
 use Livewire\Component;
+
+use function Binkap\Laraflash\alert;
 
 class AdminData extends Component
 {
@@ -56,7 +57,7 @@ class AdminData extends Component
         if ($flash == $this->adminId) {
             if ($this->execDelete()) {
                 $this->show = false;
-                \alert(\flash()->simple('Account deleted successfully', Mode::SUCCESS)->livewire($this));
+                alert()->simple()->message('Account deleted successfully')->livewire($this);
             };
         }
     }
@@ -70,11 +71,11 @@ class AdminData extends Component
     {
         if (!is_null($admin = Admin::find($this->adminId))) {
             if ($admin->getAttribute('id') == \auth()->id()) {
-                \alert(\flash()->simple('Attempt to delete your account failed', Mode::ERROR)->livewire($this));
+                alert()->message('Attempt to delete your account failed')->error()->livewire($this);
                 return;
             }
             if (!$this->authenticateDelete($admin)) {
-                \alert(\flash()->overlay("({$admin->getAttribute('name')})'s account has ownership of {$this->ownerships}, transfer them delete to successfully delete account", Mode::WARNING)->livewire($this));
+                alert()->overlay()->message("({$admin->getAttribute('name')})'s account has ownership of {$this->ownerships}, transfer them delete to successfully delete account")->warn()->livewire($this);
                 return;
             }
             Storage::delete($admin->getAttribute('avatar'));

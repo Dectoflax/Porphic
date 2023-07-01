@@ -6,6 +6,8 @@ use App\Binkap\Alert\Mode;
 use App\Models\Blog\Category;
 use Livewire\Component;
 
+use function Binkap\Laraflash\alert;
+
 class CategoryData extends Component
 {
     public string $categoryId;
@@ -57,7 +59,7 @@ class CategoryData extends Component
                 $category->delete();
             }
             $this->show = false;
-            \alert(\flash()->simple('Category deleted successfully', Mode::SUCCESS)->livewire($this));
+            alert()->simple()->success()->message('Category deleted successfully')->livewire($this);
         }
     }
 

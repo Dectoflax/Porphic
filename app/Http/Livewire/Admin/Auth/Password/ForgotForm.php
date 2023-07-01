@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Admin\Auth\Password;
 
-use App\Binkap\Alert\Mode;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Password;
 use Livewire\Component;
+
+use function Binkap\Laraflash\alert;
+use function Binkap\Laraflash\flash;
 
 class ForgotForm extends Component
 {
@@ -16,9 +18,9 @@ class ForgotForm extends Component
         $this->validate();
         match (Password::broker('admins')
             ->sendResetLink($this->only(['email']))) {
-            Password::RESET_LINK_SENT => \alert(\flash()->overlay('Password reset link sent')->livewire($this)),
-            Password::RESET_THROTTLED => \alert(\flash()->overlay('Link already sent', Mode::WARNING)->livewire($this)),
-            default => \alert(\flash()->simple('Something went wrong', Mode::ERROR)->livewire($this))
+            Password::RESET_LINK_SENT => alert(message: 'Password reset link sent')->livewire($this)->overlay()->success(),
+            Password::RESET_THROTTLED => alert(message: 'Link already sent')->livewire($this)->warn()->overlay(),
+            default => flash('Something went wrong')->error()->overlay()->livewire($this)
         };
     }
 

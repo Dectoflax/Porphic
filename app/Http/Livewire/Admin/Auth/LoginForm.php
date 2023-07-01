@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin\Auth;
 use App\Binkap\Alert\Mode;
 use Livewire\Component;
 
+use function Binkap\Laraflash\alert;
+
 class LoginForm extends Component
 {
     public string $email;
@@ -19,7 +21,7 @@ class LoginForm extends Component
         if (\auth('admin')->attempt($this->only(['email', 'password']), $this->remember)) {
             return $this->redirectRoute('admin.stat');
         }
-        \alert(\flash()->simple('Invalid email or password', Mode::WARNING)->livewire($this));
+        alert()->message('Invalid email or password')->warn()->livewire($this);
     }
 
     protected function rules()

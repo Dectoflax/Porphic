@@ -2,10 +2,11 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Binkap\Alert\Mode;
 use App\Binkap\Storage;
 use App\Models\User;
 use Livewire\Component;
+
+use function Binkap\Laraflash\alert;
 
 class UserData extends Component
 {
@@ -61,7 +62,7 @@ class UserData extends Component
                 $user->delete();
             }
             $this->show = false;
-            \alert(\flash()->simple('Account deleted successfully', Mode::SUCCESS)->livewire($this));
+            alert(message: 'Account deleted successfully')->success()->livewire($this);
         }
     }
 

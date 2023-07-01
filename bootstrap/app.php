@@ -1,6 +1,5 @@
 <?php
 
-use App\Binkap\Alert\Alert;
 use App\Binkap\Blog\Helper\PostHelper;
 
 /*
@@ -14,15 +13,6 @@ use App\Binkap\Blog\Helper\PostHelper;
 |
 */
 
-function alert(Alert $alert)
-{
-    $alert->alert();
-}
-
-function flash(): Alert
-{
-    return new Alert;
-}
 
 function parseEventParam(string $params)
 {

@@ -8,12 +8,13 @@
     <link rel="shortcut icon" href="{{ asset('resources/svg/Icon.svg', app()->isProduction()) }}" type="image/x-icon">
     <title>{{ config('app.name') }} | Admin</title>
     <!-- Scripts -->
+    @laraflashStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <livewire:styles />
 </head>
 
 <body class="bg-gray-100">
-    <x-alert />
+    <livewire:laraflash.container />
     <div class="mx-5 mt-10 flex justify-between items-center">
         <button type="button" onclick="window.history.back()"
             class="bg-white drop-shadow-lg rounded-lg px-5 font-bold py-1.5 uppercase flex items-center w-fit text-blue-500 space-x-2 border-t">

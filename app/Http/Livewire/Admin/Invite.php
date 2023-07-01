@@ -2,13 +2,13 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Binkap\Alert\Alert;
-use App\Binkap\Alert\Mode;
 use App\Jobs\Admin\Invitation;
 use App\Models\Admin\Invitation as AdminInvitation;
 use App\Models\Blog\Role;
 use Illuminate\Support\Str;
 use Livewire\Component;
+
+use function Binkap\Laraflash\alert;
 
 class Invite extends Component
 {
@@ -49,7 +49,7 @@ class Invite extends Component
         ]);
         \dispatch(new Invitation($invite));
         $this->toggle();
-        \alert(\flash()->simple('Admin invited successfully', Mode::SUCCESS)->livewire($this));
+        alert()->simple()->success()->message('Admin invited successfully')->livewire($this);
     }
 
     protected function rules()

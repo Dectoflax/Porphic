@@ -6,6 +6,8 @@ use App\Binkap\Blog\Newsletter\Preferences;
 use App\Models\Newsletter as ModelsNewsletter;
 use Livewire\Component;
 
+use function Binkap\Laraflash\alert;
+
 class Newsletter extends Component
 {
     public string $email;
@@ -18,7 +20,7 @@ class Newsletter extends Component
             'preference' => Preferences::EVERY_THING,
             'active' => true
         ]);
-        \alert(\flash()->simple('You have successfully subscribed')->livewire($this));
+        alert(message: 'You have successfully subscribed')->simple()->livewire($this);
     }
 
     protected function rules()

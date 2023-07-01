@@ -23,6 +23,7 @@
     @if (isset($schema))
     {!! $schema->getSchema() !!}
     @endif
+    @laraflashStyles
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <livewire:styles />
 </head>
@@ -30,7 +31,7 @@
 <body class="bg-gray-100">
 
     <x-blog.header />
-    <x-alert />
+    <livewire:laraflash.container />
     <div class="antialiased mt-16">
         @yield('content')
     </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42c8da6fb336d00106c42611433da0cb",
+    "content-hash": "b7c58b3a3394e06a46cbf451f2fafef9",
     "packages": [
         {
             "name": "balping/json-raw-encoder",
@@ -48,6 +48,60 @@
                 "json"
             ],
             "time": "2023-03-27T18:25:07+00:00"
+        },
+        {
+            "name": "binkap/laraflash",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/binkapS/Laraflash.git",
+                "reference": "27e18a0e0d0aedf9903620180ac3790b30307a3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/binkapS/Laraflash/zipball/27e18a0e0d0aedf9903620180ac3790b30307a3e",
+                "reference": "27e18a0e0d0aedf9903620180ac3790b30307a3e",
+                "shasum": ""
+            },
+            "require": {
+                "livewire/livewire": "^2.12",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Binkap\\Laraflash\\LaraflashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Laraflash": "Binkap\\Laraflash\\LaraflashFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Binkap\\Laraflash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Binkap S",
+                    "email": "real.desert.tiger@gmail.com"
+                }
+            ],
+            "description": "Flash Session messages for Laravel and Livewire",
+            "support": {
+                "issues": "https://github.com/binkapS/Laraflash/issues",
+                "source": "https://github.com/binkapS/Laraflash/tree/1.0.0"
+            },
+            "time": "2023-06-30T22:28:29+00:00"
         },
         {
             "name": "brick/math",
